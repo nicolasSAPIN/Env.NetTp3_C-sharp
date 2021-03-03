@@ -1,0 +1,93 @@
+﻿@model IEnumerable<WEBTP.Entities.Book>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Sell un BOOK", "Create")
+</p>
+
+@using (Html.BeginForm(new { @class = "form-group" }))
+{
+    <p>
+        Find by name: @Html.TextBox("SearchTitle")
+
+    </p>
+
+
+    <p>
+        or :
+        <br />
+        number of pages: equal = @Html.TextBox("SearchNbPagesEqual")
+        number pages min. : @Html.TextBox("SearchNbPgMin") to number pages max. : @Html.TextBox("SearchNbPgMax")
+
+    </p>
+    <p>
+        or :
+        <br />
+        Price min. : @Html.TextBox("SearchNbPriceMin") to Price max. : @Html.TextBox("SearchNbPriceMax")
+        <input type="submit" value="Search" placeholder="Recherche" />
+    </p>
+
+}
+
+
+<table class="table">
+    <tr>
+        <td>
+            sort by:  @Html.ActionLink("Title", "Index", new { sortOrder = ViewBag.TilteSortParm })
+        </td>
+
+        <td>
+            sort by: @Html.ActionLink("Price", "Index", new { sortOrder = ViewBag.PriceSortParm })
+        </td>
+        <th></th>
+    </tr>
+</table>
+
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+@foreach (var item in Model)
+{
+
+    <div class="card" style="width: 18rem; border: 2px dashed #0094ff;">
+        <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">@Html.DisplayFor(modelItem => item.Title)</h5>
+            <p class="card-text">
+                @Html.DisplayFor(modelItem => item.NbPages)Pages <br />coast: @Html.DisplayFor(modelItem => item.Price) €
+                <br />
+
+
+
+                @if (ViewBag.Status == "seller")
+                {
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IdBook })
+                    @Html.ActionLink("Details", "Details", new { id = item.IdBook })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IdBook })
+                }
+            </p>
+            <a href="#" class="btn btn-primary">@Html.ActionLink("Buy it now", "Buy", new { id = item.IdBook })</a>
+        </div>
+    </div>
+
+    <h3>HELLO @Html.DisplayFor(modelItem => item.User.Firstname), >@Html.ActionLink("Here", "Index", "SellerBook") is the list of your books to sell </h3>
+}
+
+
+
+
+

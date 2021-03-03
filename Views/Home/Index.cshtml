@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Realisation TP Environnement.net: réalisation d'une application web ASP.net.</h1>
+
+</div>
+
+<div class="row">
+
+    <p>Gestion d'une connexion utilisateurs<span class="badge badge-success">(Fait)</span></p>
+   
+    <p style="color: #4cff00">action :->Boutton connexion avec formulaire (controlleur Account)+ controle de session sur chaque page <span class="badge badge-success">(Fait)</span> </p>
+    <p style="color: #4cff00">action :-> Une fonction testsession() que j'ai mis en bas de chaque controlleur et que j'ai appelée dans chaque point d'entrée de chacun des controleur. Pour les tests ils sont commentés le temps que tout soit en ordre </p>
+    <p style="color: #4cff00">action :->Le boutton de connexion n'aaparait que si l'utilisateur n'est pas connecté ( user de test si la base est conservée: ----  Login: acronier@test.fr   mbp: aaa)</p>
+    <p>Un vendeur vends ses livres<span class="badge badge-success">(Fait)</span></p>
+    <p></p>
+    <p style="color: #4cff00">action :-> CRUD sur les livres</p>
+    <p>Un acheteur peut parcourir une liste de livres et faire une chercher selon les critéres suivants:<span class="badge badge-success">(Fait)</span></p>
+    <p style="color: #4cff00">action :->Fait: Voir controller sellerbook et view accessible sur un lien dans le  index book </p>
+    <p style="color: #4cff00">--> Tout utilisiateur connecté peut voir la liste des livres et devenir vendeur en en ajoutant un.(voir controller book et view) </p>
+    <p style="color: #4cff00">->Fait en plus: un tri par titre et prix (voir dans controller book et views )</p>
+    <p>
+        Créer, avec MVC 5 les éléments de CRUD pour les entités Book, Role et User.:<span class="badge badge-success">(Fait)</span> <br />
+    <p style="color: #4cff00">action :-> voir dans les differents controllers et views </p>
+    Créez, avec MVC 5, les vues permettant de :<br />
+    sélectionner un utilisateur : <span class="badge badge-success">(Fait)</span><br />
+
+    </p>
+    <p>Rechercher des livres appartenant au "seller" par des critères :<br />
+ 
+    le nom contient une valeur <span class="badge badge-success">(Fait)</span><br />
+    nombre de page égale et ou inférieur et ou supérieur, à une valeur : <span class="badge badge-success">(Fait)</span><br />
+    le prix est inférieur ou supérieur ou entre, une valeur <span class="badge badge-success">(Fait)</span><br />
+    La vue de recherche de livre doit utiliser :<br />
+    <p>action :</p>
+    <p style="color: #4cff00">action :->Fait (voir controller book et index view)</p>
+    Une balise "card" pour représenter l'ensemble des informations liées au livre :<br />
+    nom<br />
+    nombre de page<br />
+    prix<br />
+    seller détenant actuellement le livre<br />
+    <p>action :</p>
+    <p style="color: #4cff00">action :->Fait (voir controller book et index view)</p>
+    <p style="color:#ff0000">Le resultat n'est pas tres joli visuellement mais c'est fonctionnel</p>
+    </p>
+    <p style="color:#ff0000">
+        Voir ce qu'il me reste a faire en cliquant ici:  <button type="button" class="btn btn-default">@Html.ActionLink("À propos de", "About", "Home")</button>
+    </p>
+</div>

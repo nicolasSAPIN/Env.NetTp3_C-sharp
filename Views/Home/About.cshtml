@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+<p>Here, I put all my ressources that help me to create that Appliction Web:</p>
+<p></p>
+<div id="Session" class="">Les Sessions:</div>
+<ul id="Principal">
+    <li>Asp.net</li>
+    <li>Model MVC</li>
+    <li>Entity framework</li>
+    <li><a href="https://docs.microsoft.com/fr-fr/aspnet/mvc/overview/getting-started/getting-started-with-ef-using-mvc/creating-an-entity-framework-data-model-for-an-asp-net-mvc-application">toute la doc de microsoft est trés bien faite (j'ai presque tout lu pour comprendre)</a></li>
+    <li>Les Sessions</li>
+    <li id="second"><a href="http://www.lsis.org/elmouelhia/courses/csharp/coursAspSessions.pdf">www.lsis.org</a></li>
+    <li>Bootstrap</li>
+    <li><a href="https://getbootstrap.com/docs/4.1/components/card/">getbootstrap.com - Card</a></li>
+    <li>Help - forum</li>
+    <li><a href="https://www.stackoverflow.com">stackoverflow.com</a></li>
+    <li><a href="https://www.entityframeworktutorial.net/code-first/configure-one-to-many-relationship-in-code-first.aspx">Entity framework un outil magic ;op et genial</a></li>
+</ul>
+<div>
+    <h3>Dejà fait:</h3>
+    <ul>
+        <li>Analyse conceptuelle et définition des besoins pour atteindre le résultat attendu</li>
+        <li>Tentative de recupereation du projet sur Git:</li>
+        <ol>
+            <li>Nettoyage et regénération de la solution.(Des erreurs persistent)</li>
+            <li>Tentative de comprehension des fichiers présents dans models et entities.</li>
+            <li>Inconprehension des relations existantes entre role et user: </li>
+            <ul>
+                <li>Dans 'user' il y a une liste de 'role': cela signifie qu'un 'user' à plusieurs 'role'</li>
+                <li>Au regard de la définition dans 'role' ( ou il n'y a ni aucune liaisiaison vers 'user') et selon la  <a href="https://www.entityframeworktutorial.net/code-first/configure-one-to-many-relationship-in-code-first.aspx">documentation trouvée ici </a>, cela signifie qu'un role n'est attribué qu'a un et un seul user (ce qui n'est pas logique)</li>
+                <li>Selon moi et ce que j'ai trouvé dans <a href="https://www.entityframeworktutorial.net/code-first/configure-many-to-many-relationship-in-code-first.aspx">cette documention</a>, une relation many-to-many doit exister entre les deux et donc il devrait y avoir une liste 'user' dans 'role'</li>
+            </ul>
+            <li></li>
+        </ol>
+        <li>Repartir de zero</li>
+        <li>comprendre le fonctionnement</li>
+        <li>créer le model (dans entities y a t-il mieux a faire et comment?)</li>
+        <li>tout refaire plusieurs fois</li>
+        <li> config web.config</li>
+        <li>le context</li>
+        <li>les controllers (users,roles,books)</li>
+        <li>essayer initializer qui n'a pas fonctionné</li>
+        <li>Authentification(login + session)</li>
+        <li>book(query linq for index and create)</li>
+        <li>Seller's book(query linq for create book: comme je l'avais fait il me proposait une liste d'utilisateurs plutot que de prendre l'id du user à l'origine de la création</li>
+        <li>Index book: a link on SellerBook: to see </li>
+     </ul>
+</div>
+<div>
+    <h3>Reste a faire:</h3>
+    <br />
+    Lorsqu'un utilisateur est créé: verifier qu'il ne saisisse pas un même mail et password qu'un utilisateur déjà existant..
+    <br />
+    A la creation d'un livre (+ a l'update), recuperer l'id de l'utilisateur connecté pour l'inserer en foreign key du book créé...
+    <br />
+    Mise en forme avec bootstrap
+</div>
